@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 pub struct Numeral(u8);
 
@@ -50,7 +49,7 @@ pub struct Numeral(u8);
       pub fn polarity(&self) -> &str {
           POLARITY[self.polarity_index() as usize]
       }
-      pub fn polarity_chin(&self) -> &str {
+      pub fn polarity_cn(&self) -> &str {
           POLARITY_CN[self.polarity_index() as usize]
       }
       pub fn polarity_lum(&self) -> &str {
@@ -86,10 +85,10 @@ pub struct Numeral(u8);
       pub fn heavenly_stem(&self) -> &str {
           HEAVENLY_STEMS_CN[self.heavenly_stem_index() as usize]
       }
-      pub fn element_chin(&self) -> &str {
+      pub fn element_cn(&self) -> &str {
           ELEMENTS_CN[self.generating_index() as usize]
       }
-      pub fn animal_chin(&self) -> &str {
+      pub fn animal_cn(&self) -> &str {
           ANIMALS_CN[self.duodecimal_index() as usize]
       }
       pub fn western_sign(&self) -> &str {
@@ -142,13 +141,13 @@ mod tests {
       assert_eq!(tazo.natural_order(), 11);
       assert_eq!(tazo.heavenly_stem_index(), 5);
       assert_eq!(tazo.heavenly_stem(), "己");
-      assert_eq!(tazo.element_chin(), "土");
-      assert_eq!(tazo.animal_chin(), "猪");
+      assert_eq!(tazo.element_cn(), "土");
+      assert_eq!(tazo.animal_cn(), "猪");
       assert_eq!(tazo.diacritic_name(), "ta");
       assert_eq!(tazo.duodecimal_name(), "zo");
       assert_eq!(tazo.sexagesimal_name(), "tazo");
       assert_eq!(tazo.polarity(), "yin");
-      assert_eq!(tazo.polarity_chin(), "陰");
+      assert_eq!(tazo.polarity_cn(), "陰");
       assert_eq!(tazo.polarity_lum(), "Moon");
       assert_eq!(tazo.western_sign(), "pisces");
       assert_eq!(tazo.hex_index(), 5);
@@ -201,20 +200,5 @@ mod tests {
       assert_eq!(wulev.zee_index(), 10);
       assert_eq!(wulev.cohort_index(), 0);
       assert_eq!(wulev.natural_order_index(), 10);
-
-      let shebey = Numeral::new(14);
-      println!("{}", shebey.sexagesimal_name());
-      println!("{} {} {}", shebey.duodecimal_index(), shebey.generating_index(), shebey.hex_index() % 5);
-      println!("{} {} {}", shebey.cohort_index(), shebey.zee_index(), shebey.natural_order_index());
-      println!("{}", shebey.natural_order_index());
-
-      let shetree = Numeral::new(27);
-      println!("{}", shetree.sexagesimal_name());
-      println!("{} {} {}", shetree.duodecimal_index(), shetree.generating_index(), shetree.hex_index() % 5);
-      println!("{} {} {}", shetree.cohort_index(), shetree.zee_index(), shetree.natural_order_index());
-      println!("{}", shetree.natural_order_index());
-
-      let jox = Numeral::new(42);
-      println!("{}", jox.natural_order_index());
-      }
+    }
 }
