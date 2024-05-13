@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use hyxos_numerals::Numeral;
+    use hyxos_numerals::*;
 
     #[test]
     fn it_works() {
@@ -19,7 +19,6 @@ mod tests {
       assert_eq!(tazo.animal(), "pig");
       assert_eq!(tazo.earthly_branch(), "亥");
       assert_eq!(tazo.generating_index(), 2);
-      assert_eq!(tazo.natural_order(), 11);
       assert_eq!(tazo.heavenly_stem_index(), 5);
       assert_eq!(tazo.heavenly_stem(), "己");
       assert_eq!(tazo.element_cn(), "土");
@@ -51,7 +50,6 @@ mod tests {
       assert_eq!(shenen.planet(), "Mercury");
       assert_eq!(shenen.earthly_branch(), "申");
       assert_eq!(shenen.generating_index(), 4);
-      assert_eq!(shenen.natural_order(), 8);
       assert_eq!(shenen.heavenly_stem_index(), 8);
       assert_eq!(shenen.heavenly_stem(), "壬");
       assert_eq!(shenen.hex_index(), 4);
@@ -74,12 +72,18 @@ mod tests {
       assert_eq!(wulev.animal(), "dog");
       assert_eq!(wulev.earthly_branch(), "戌");
       assert_eq!(wulev.generating_index(), 0);
-      assert_eq!(wulev.natural_order(), 10);
       assert_eq!(wulev.heavenly_stem_index(), 0);
       assert_eq!(wulev.heavenly_stem(), "甲");
       assert_eq!(wulev.hex_index(), 5 );
       assert_eq!(wulev.zee_index(), 10);
       assert_eq!(wulev.cohort_index(), 0);
       assert_eq!(wulev.natural_order_index(), 10);
+    }
+    #[test]
+    fn try_this() {
+      let deck = Set::new().shuffle();
+      for c in deck.values() {
+        println!("{} {:?} {:?}", c.sexagesimal_name(), c.i(), c.natural_order_index());
+      }
     }
 }

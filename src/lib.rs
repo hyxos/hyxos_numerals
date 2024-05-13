@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 pub struct Numeral(u8);
 
 mod constants;
@@ -12,6 +12,9 @@ impl Numeral {
         else {
             Numeral(i)
         }
+    }
+    pub fn i(&self) -> u8 {
+      self.0
     }
     pub fn diacritic_index(&self) -> u8 {
         self.0 / 12
@@ -73,12 +76,6 @@ impl Numeral {
     pub fn generating_index(&self) -> u8 {
         GENERATING_INDECES[self.diacritic_index() as usize]
     }
-    pub fn natural_order(&self) -> u8 {
-      if self.duodecimal_index() > 1 {
-        self.duodecimal_index() - 1
-      }
-      else { 11 }
-    }
     pub fn heavenly_stem_index(&self) -> u8 {
         self.generating_index() * 2 + (if self.polarity_index() == 0 { 1 } else { 0 }) 
     }
@@ -116,3 +113,28 @@ impl Numeral {
     }
 
 }
+use rand::thread_rng;
+use rand::seq::SliceRandom;
+
+#[derive(Debug, Clone)]
+pub struct Set(Vec<Numeral>);
+
+impl Set {
+  pub fn new() -> Set {
+    Set((0..60).into_iter().map(|i| Numeral::new(i)).collect())
+  }
+  pub fn values(&self) -> Vec<Numeral> {
+    self.clone().0
+  }
+  pub fn shuffle(&self) -> Set {
+    let mut set: Vec<Numeral> = self.values();
+    set.shuffle(&mut thread_rng());
+    Set(set)
+  }
+  pub fn nat_sort(&self) -> Set {
+    let mut set: Vec<Numeral> = self.values();
+    set.sort_by(|a, b| a.natural_order_index().cmp(&b.natural_order_index()));
+    Set(set)
+  }
+}
+
