@@ -9,11 +9,11 @@ pub mod constants {
   pub const GENERATING_INDECES: [u8;5] = [2, 4, 1, 3, 0];
   pub const ANIMALS: [&str;12] = ["pig", "rat", "ox", "tiger", "rabbit", "dragon", "snake", "horse", "sheep", "monkey", "rooster", "dog"];
   pub const WESTERN_SIGNS: [&str;12] = ["pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagitarius", "capricorn", "aquarius"];
-  pub const ELEMENTS_CHINESE: [&str;5] = ["木", "火", "土", "金", "水"];
-  pub const EARTHLY_BRANCHES_CHINESE: [&str;12] = ["亥", "子", "丑" ,"寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌"];
-  pub const HEAVENLY_STEMS_CHINESE: [&str;10]= ["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
-  pub const ANIMALS_CHINESE: [&str;12] = ["猪", "鼠", "牛", "虎", "兔", "龍", "蛇", "馬", "羊", "猴", "雞", "狗"];
+  pub const ELEMENTS_CN: [&str;5] = ["木", "火", "土", "金", "水"];
+  pub const EARTHLY_BRANCHES_CN: [&str;12] = ["亥", "子", "丑" ,"寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌"];
+  pub const HEAVENLY_STEMS_CN: [&str;10]= ["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
+  pub const ANIMALS_CN: [&str;12] = ["猪", "鼠", "牛", "虎", "兔", "龍", "蛇", "馬", "羊", "猴", "雞", "狗"];
   pub const POLARITY: [&str;2] = ["yin", "yang"];
-  pub const POLARITY_CHINESE: [&str;2] = ["陰", "陽"];
+  pub const POLARITY_CN: [&str;2] = ["陰", "陽"];
   pub const POLARITY_LUMINARIES: [&str;2] = ["Moon", "Sun"];
 }

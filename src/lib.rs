@@ -1,4 +1,5 @@
 
+#[derive(Debug)]
 pub struct Numeral(u8);
 
   mod constants;
@@ -50,7 +51,7 @@ pub struct Numeral(u8);
           POLARITY[self.polarity_index() as usize]
       }
       pub fn polarity_chin(&self) -> &str {
-          POLARITY_CHINESE[self.polarity_index() as usize]
+          POLARITY_CN[self.polarity_index() as usize]
       }
       pub fn polarity_lum(&self) -> &str {
           POLARITY_LUMINARIES[self.polarity_index()as usize]
@@ -68,7 +69,7 @@ pub struct Numeral(u8);
           ANIMALS[self.duodecimal_index() as usize]
       }
       pub fn earthly_branch(&self) -> &str {
-          EARTHLY_BRANCHES_CHINESE[self.duodecimal_index() as usize]
+          EARTHLY_BRANCHES_CN[self.duodecimal_index() as usize]
       }
       pub fn generating_index(&self) -> u8 {
           GENERATING_INDECES[self.diacritic_index() as usize]
@@ -83,17 +84,38 @@ pub struct Numeral(u8);
           self.generating_index() * 2 + (if self.polarity_index() == 0 { 1 } else { 0 }) 
       }
       pub fn heavenly_stem(&self) -> &str {
-          HEAVENLY_STEMS_CHINESE[self.heavenly_stem_index() as usize]
+          HEAVENLY_STEMS_CN[self.heavenly_stem_index() as usize]
       }
       pub fn element_chin(&self) -> &str {
-          ELEMENTS_CHINESE[self.generating_index() as usize]
+          ELEMENTS_CN[self.generating_index() as usize]
       }
       pub fn animal_chin(&self) -> &str {
-          ANIMALS_CHINESE[self.duodecimal_index() as usize]
+          ANIMALS_CN[self.duodecimal_index() as usize]
       }
       pub fn western_sign(&self) -> &str {
           WESTERN_SIGNS[self.duodecimal_index() as usize]
       }
+      pub fn zee_index(&self) -> u8 {
+          if self.duodecimal_index() > 0 {
+            self.duodecimal_index() - 1
+          }
+          else { 11 }
+      }
+      pub fn hex_index(&self) -> u8 {
+          self.zee_index() / 2
+      }
+      pub fn cohort_index(&self) -> u8 {
+        if self.generating_index() >= self.hex_index() {
+          self.generating_index() - self.hex_index()
+        }
+        else {
+          (self.generating_index() + 5) - self.hex_index()
+        }
+      }
+      pub fn natural_order_index(&self) -> u8 {
+        self.cohort_index() * 12 + self.zee_index()
+      }
+
   }
 
 #[cfg(test)]
@@ -129,7 +151,11 @@ mod tests {
       assert_eq!(tazo.polarity_chin(), "陰");
       assert_eq!(tazo.polarity_lum(), "Moon");
       assert_eq!(tazo.western_sign(), "pisces");
-      
+      assert_eq!(tazo.hex_index(), 5);
+      assert_eq!(tazo.zee_index(), 11);
+      assert_eq!(tazo.cohort_index(), 2);
+      assert_eq!(tazo.natural_order_index(), 35);
+
       let shenen = Numeral::new(21);
       assert_eq!(shenen.diacritic_index(), 1);
       assert_eq!(shenen.duodecimal_index(), 9);
@@ -148,6 +174,10 @@ mod tests {
       assert_eq!(shenen.natural_order(), 8);
       assert_eq!(shenen.heavenly_stem_index(), 8);
       assert_eq!(shenen.heavenly_stem(), "壬");
+      assert_eq!(shenen.hex_index(), 4);
+      assert_eq!(shenen.zee_index(),8);
+      assert_eq!(shenen.cohort_index(), 0);
+      assert_eq!(shenen.natural_order_index(), 8);
       
       let wulev = Numeral::new(59);
       assert_eq!(wulev.diacritic_index(), 4);
@@ -167,5 +197,24 @@ mod tests {
       assert_eq!(wulev.natural_order(), 10);
       assert_eq!(wulev.heavenly_stem_index(), 0);
       assert_eq!(wulev.heavenly_stem(), "甲");
+      assert_eq!(wulev.hex_index(), 5 );
+      assert_eq!(wulev.zee_index(), 10);
+      assert_eq!(wulev.cohort_index(), 0);
+      assert_eq!(wulev.natural_order_index(), 10);
+
+      let shebey = Numeral::new(14);
+      println!("{}", shebey.sexagesimal_name());
+      println!("{} {} {}", shebey.duodecimal_index(), shebey.generating_index(), shebey.hex_index() % 5);
+      println!("{} {} {}", shebey.cohort_index(), shebey.zee_index(), shebey.natural_order_index());
+      println!("{}", shebey.natural_order_index());
+
+      let shetree = Numeral::new(27);
+      println!("{}", shetree.sexagesimal_name());
+      println!("{} {} {}", shetree.duodecimal_index(), shetree.generating_index(), shetree.hex_index() % 5);
+      println!("{} {} {}", shetree.cohort_index(), shetree.zee_index(), shetree.natural_order_index());
+      println!("{}", shetree.natural_order_index());
+
+      let jox = Numeral::new(42);
+      println!("{}", jox.natural_order_index());
       }
 }
