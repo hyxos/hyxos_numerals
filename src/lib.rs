@@ -13,6 +13,24 @@ impl Numeral {
             Numeral(i)
         }
     }
+    pub fn new_from_enc(n: &str) -> Numeral {
+        let mut di: Option<usize> = Some(0);
+        let mut dd: Option<usize> = Some(0);
+            for (i, c) in n.chars().enumerate() {
+                match i {
+                    0 => di = DIACRITIC_CHARS.iter().position(|&t| t == c),
+                    1 => dd = DUODECIMALS.iter().position(|&u| u == c),
+                    _ => panic!("Invalid encoding!")
+            }
+        }
+        fn check_encoding(o: Option<usize>) -> usize {
+            match o {
+              Some(o) => o,
+              None => panic!("Invalid encoding!")
+            }
+        }
+        Numeral(((check_encoding(di) * 12) + check_encoding(dd)) as u8)
+    }
     pub fn i(&self) -> u8 {
       self.0
     }

@@ -78,12 +78,8 @@ mod tests {
       assert_eq!(wulev.zee_index(), 10);
       assert_eq!(wulev.cohort_index(), 0);
       assert_eq!(wulev.natural_order_index(), 10);
-    }
-    #[test]
-    fn try_this() {
-      let deck = Set::new().shuffle();
-      for c in deck.values() {
-        println!("{} {:?} {:?}", c.sexagesimal_name(), c.i(), c.natural_order_index());
-      }
+      
+      let shesep = Numeral::new_from_enc("s7");
+      assert_eq!(shesep.i(), Numeral::new(19).i());
     }
 }
