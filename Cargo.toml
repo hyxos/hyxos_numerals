@@ -3,6 +3,7 @@ name = "hyxos_numerals"
 authors = ["Donnie Hyxos"]
 homepage = "https://hyxos.io"
 repository = "https://github.com/hyxos/hyxos_numerals"
+description = "A library for working with the hyxos numerals."
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
