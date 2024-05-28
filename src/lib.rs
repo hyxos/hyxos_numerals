@@ -2,6 +2,7 @@
 pub struct Numeral(u8);
 
 mod constants;
+
 use constants::constants::*;
 
 impl Numeral {
@@ -183,5 +184,48 @@ impl Set {
         let mut set: Vec<Numeral> = self.values();
         set.sort_by(|a, b| a.natural_order_index().cmp(&b.natural_order_index()));
         Set(set)
+    }
+}
+
+#[derive(Debug, Clone)]
+pub struct Uint(Vec<Numeral>);
+
+fn powsof60(a: Vec<usize>) -> Vec<usize> {
+    let v: usize = 59;
+    let mut c = a;
+    while &c[0] > &v {
+        let d = c[0] / 60;
+        let e = c[0] - d * 60;
+        c.remove(0);
+        c.insert(0, d);
+        c.insert(1, e);
+        powsof60(c.clone());
+    }
+    c
+}
+
+pub fn u(v: Vec<Numeral>) -> usize {
+    let mut sum: u32 = 0;
+    let base: u32 = 60;
+    for (i, c) in v.iter().rev().enumerate() {
+        sum += base.pow(i as u32) * (c.i() as u32);
+    }
+    sum as usize
+}
+
+impl Uint {
+    pub fn new(u: usize) -> Uint {
+        let v = powsof60(vec![u]);
+        let g = v.iter().map(|a| Numeral::new(*a as u8)).collect();
+        Uint(g)
+    }
+    pub fn new_from_numerals(v: Vec<Numeral>) -> Uint {
+        Uint::new(u(v))
+    }
+    pub fn values(&self) -> Vec<Numeral> {
+        self.clone().0
+    }
+    pub fn u(&self) -> usize {
+        u(self.values())
     }
 }

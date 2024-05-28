@@ -78,5 +78,8 @@ mod tests {
         assert_eq!(wulev.zee_index(), 10);
         assert_eq!(wulev.cohort_index(), 0);
         assert_eq!(wulev.natural_order_index(), 10);
+
+        let u: Uint = Uint::new(563601);
+        assert_eq!(u.u(), 563601)
     }
 }
