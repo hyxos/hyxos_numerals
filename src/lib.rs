@@ -6,11 +6,11 @@ mod constants;
 use constants::constants::*;
 
 impl Numeral {
-    pub fn new(i: u8) -> Numeral {
-        if i > 59 {
+    pub fn new(u: u8) -> Numeral {
+        if u > 59 {
             panic!("Can only create numerals from values 0 through 59!")
         } else {
-            Numeral(i)
+            Numeral(u)
         }
     }
     pub fn new_from_enc(n: &str) -> Numeral {
@@ -31,7 +31,7 @@ impl Numeral {
         }
         Numeral(((check_encoding(di) * 12) + check_encoding(dd)) as u8)
     }
-    pub fn i(&self) -> u8 {
+    pub fn u(&self) -> u8 {
         self.0
     }
     pub fn diacritic_index(&self) -> u8 {
@@ -151,7 +151,7 @@ Nickname: {}
 Nickname (CN): {}
 
 ",
-            self.i(),
+            self.u(),
             self.sexagesimal_name(),
             self.encoding(),
             self.natural_order_index() + 1,
@@ -208,7 +208,7 @@ pub fn u(v: Vec<Numeral>) -> usize {
     let mut sum: u32 = 0;
     let base: u32 = 60;
     for (i, c) in v.iter().rev().enumerate() {
-        sum += base.pow(i as u32) * (c.i() as u32);
+        sum += base.pow(i as u32) * (c.u() as u32);
     }
     sum as usize
 }
