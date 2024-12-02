@@ -1,3 +1,8 @@
+#![feature(more_float_constants)]
+
+pub mod unit_diacritic;
+pub mod unit_glyph;
+
 #[derive(Debug, Copy, Clone)]
 pub struct Numeral(u8);
 
