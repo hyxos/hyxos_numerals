@@ -60,6 +60,27 @@ impl Numeral {
     pub fn sexagesimal_name(&self) -> String {
         self.diacritic_name().to_owned() + self.duodecimal_name()
     }
+    
+    pub fn spoken_name(&self) -> String {
+        match (self.diacritic_index(), self.duodecimal_index()) {
+            // ta tier - just the glyph name
+            (0, _) => self.duodecimal_name().to_string(),
+            // diacritic + zo = just the diacritic
+            (_, 0) => self.diacritic_name().to_string(),
+            // Contractions with hyx (6)
+            (1, 6) => "shex".to_string(),
+            (2, 6) => "reex".to_string(),
+            (3, 6) => "jox".to_string(),
+            (4, 6) => "wux".to_string(),
+            // Contractions with awk (8)
+            (1, 8) => "shek".to_string(),
+            (2, 8) => "reek".to_string(),
+            (3, 8) => "jok".to_string(),
+            (4, 8) => "wuk".to_string(),
+            // Default: diacritic + glyph
+            _ => self.diacritic_name().to_owned() + self.duodecimal_name()
+        }
+    }
     pub fn encoding(&self) -> String {
         self.diacritic_char().to_string() + &self.duodecimal_char().to_string()
     }
@@ -116,6 +137,10 @@ impl Numeral {
     }
     pub fn nickname_cn(&self) -> String {
         self.element_cn().to_string() + &self.animal_cn()
+    }
+    
+    pub fn fractional_name(&self) -> &str {
+        FRACTIONAL_TOS[self.duodecimal_index() as usize]
     }
     pub fn ganzhi(&self) -> String {
         self.heavenly_stem().to_string() + &self.earthly_branch()
