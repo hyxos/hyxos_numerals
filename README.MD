@@ -38,7 +38,7 @@ assert_eq!(six.fractional_name(), "hyxos"); // One-sixth
 
 ### Terminology
 
-- **Hyxamel**: A number expressed in the Hyxos system
+- **Hyxamal**: A number expressed in the Hyxos system
 - **Hyxadekimal/Maal**: The base-60 system itself
 - **[tier, offset]**: Two-part representation where tier (0-4) × 12 + offset (0-11) = decimal
 

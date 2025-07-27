@@ -7,7 +7,7 @@ This document outlines the grammar rules of the **Hyxos numeral system**, enabli
 **Important**: The Hyxos system is designed as a pure numeral system that can be embedded within any existing language, similar to how terms like "dozen" or "score" function in English. This guide covers only numerical expressions - no verbs, sentence structure, or non-numeric vocabulary. Hyxos numbers can be used within English, Spanish, Mandarin, or any other language as a specialized counting system.
 
 ### Terminology
-- **Hyxamel** (noun): A number expressed in the Hyxos numeral system, analogous to how "decimal" refers to base-10 numbers
+- **Hyxamal** (noun): A number expressed in the Hyxos numeral system, analogous to how "decimal" refers to base-10 numbers
 - **Decimal**: Traditional base-10 representation (e.g., 4689)
 - **Hyxadekimal** (adjective/noun): The base-60 numeral system itself, from hyxa (six) + dek (ten) + -imal, literally "six-ten-al" (Hyxos-native term using the system's own vocabulary)
 - **Maal** (adjective/noun): Pure Hyxos term for base-60/sexagesimal, from ma (60) + -al suffix
@@ -204,7 +204,7 @@ Pattern observations:
 - **-os**: katos, hyxos, neynos, dekos, levos, shetos
 - The distribution may reflect phonetic harmony or historical linguistic patterns
 
-| Hyxamel | Meaning | Decimal |
+| Hyxamal | Meaning | Decimal |
 |---------|---------|---------|
 | zotos   | 1/0     | ∞       |
 | zeetos  | 1/1     | 1.0     |
@@ -287,7 +287,7 @@ These numerical expressions integrate into any language like specialized countin
 - Diacritic vowel order mirrors symbolic logic: a, e, i, o, u
 - Root glyphs can combine recursively with suffix tiers for massive numbers
 - Contractions enhance fluidity and spoken cadence
-- Hyxamel representations are typically much more concise than decimal equivalents (e.g., "feshexmaneyn" = 4 syllables vs "four thousand six hundred eighty-nine" = 9 syllables)
+- Hyxamal representations are typically much more concise than decimal equivalents (e.g., "feshexmaneyn" = 4 syllables vs "four thousand six hundred eighty-nine" = 9 syllables)
 
 ---
 
