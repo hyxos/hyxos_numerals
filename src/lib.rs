@@ -78,6 +78,8 @@ impl Numeral {
             (3, 8) => "jok".to_string(),
             (4, 8) => "wuk".to_string(),
             // Default: diacritic + glyph
+            // Special case for shey tier - drop the "y" in compounds
+            (1, _) => "she".to_owned() + self.duodecimal_name(),
             _ => self.diacritic_name().to_owned() + self.duodecimal_name()
         }
     }

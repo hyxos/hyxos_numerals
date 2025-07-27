@@ -7,7 +7,7 @@ This document outlines the grammar rules of the **Hyxos numeral system**, enabli
 **Important**: The Hyxos system is designed as a pure numeral system that can be embedded within any existing language, similar to how terms like "dozen" or "score" function in English. This guide covers only numerical expressions - no verbs, sentence structure, or non-numeric vocabulary. Hyxos numbers can be used within English, Spanish, Mandarin, or any other language as a specialized counting system.
 
 ### Terminology
-- **Hyxamel** (noun): A number expressed in the Hyxos numeral system, analogous to how "decimal" refers to base-10 numbers
+- **Hyxamal** (noun): A number expressed in the Hyxos numeral system, analogous to how "decimal" refers to base-10 numbers
 - **Decimal**: Traditional base-10 representation (e.g., 4689)
 - **Hyxadekimal** (adjective/noun): The base-60 numeral system itself, from hyxa (six) + dek (ten) + -imal, literally "six-ten-al" (Hyxos-native term using the system's own vocabulary)
 - **Maal** (adjective/noun): Pure Hyxos term for base-60/sexagesimal, from ma (60) + -al suffix
@@ -41,15 +41,20 @@ Each diacritic represents a base-12 tier:
 | Tier | Diacritic | Starts At | Encoding |
 |------|-----------|-----------|----------|
 | 0    | ta        | 0         | t        |
-| 1    | she       | 12        | s        |
+| 1    | shey      | 12        | s        |
 | 2    | ree       | 24        | r        |
 | 3    | jo        | 36        | j        |
 | 4    | wu        | 48        | w        |
 
+**Important pronunciation rule for "shey"**: 
+- "shey" (rhymes with "way") stands alone when it represents 12
+- In compounds, the "y" is dropped: sheyzee → shezee, sheytree → shetree
+- This is why contractions show "shex" not "sheyx", "shek" not "sheyk"
+
 ### Encoding Methods
 
 1. **Two-Part Array Encoding**: [tier, offset] where tier is 0-4 and offset is 0-11
-   - `[1, 0]` = she (tier 1, offset 0 = decimal 12)
+   - `[1, 0]` = shey (tier 1, offset 0 = decimal 12)
    - `[1, 3]` = shetree (tier 1, offset 3 = decimal 15)
    - `[2, 8]` = reek (tier 2, offset 8 = decimal 32)
    - `[4, 0]` = wu (tier 4, offset 0 = decimal 48)
@@ -199,7 +204,7 @@ Pattern observations:
 - **-os**: katos, hyxos, neynos, dekos, levos, shetos
 - The distribution may reflect phonetic harmony or historical linguistic patterns
 
-| Hyxamel | Meaning | Decimal |
+| Hyxamal | Meaning | Decimal |
 |---------|---------|---------|
 | zotos   | 1/0     | ∞       |
 | zeetos  | 1/1     | 1.0     |
@@ -282,7 +287,7 @@ These numerical expressions integrate into any language like specialized countin
 - Diacritic vowel order mirrors symbolic logic: a, e, i, o, u
 - Root glyphs can combine recursively with suffix tiers for massive numbers
 - Contractions enhance fluidity and spoken cadence
-- Hyxamel representations are typically much more concise than decimal equivalents (e.g., "feshexmaneyn" = 4 syllables vs "four thousand six hundred eighty-nine" = 9 syllables)
+- Hyxamal representations are typically much more concise than decimal equivalents (e.g., "feshexmaneyn" = 4 syllables vs "four thousand six hundred eighty-nine" = 9 syllables)
 
 ---
 
