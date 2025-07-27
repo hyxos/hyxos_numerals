@@ -1,6 +1,6 @@
 pub mod constants {
     pub const DIACRITIC_CHARS: [char; 5] = ['t', 's', 'r', 'j', 'w'];
-    pub const DIACRITIC_NAME: [&str; 5] = ["ta", "she", "ree", "jo", "wu"];
+    pub const DIACRITIC_NAME: [&str; 5] = ["ta", "shey", "ree", "jo", "wu"];
     pub const DUODECIMALS: [char; 12] =
         ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b'];
     pub const DUODECIMAL_NAME: [&str; 12] = [

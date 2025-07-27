@@ -41,15 +41,20 @@ Each diacritic represents a base-12 tier:
 | Tier | Diacritic | Starts At | Encoding |
 |------|-----------|-----------|----------|
 | 0    | ta        | 0         | t        |
-| 1    | she       | 12        | s        |
+| 1    | shey      | 12        | s        |
 | 2    | ree       | 24        | r        |
 | 3    | jo        | 36        | j        |
 | 4    | wu        | 48        | w        |
 
+**Important pronunciation rule for "shey"**: 
+- "shey" (rhymes with "way") stands alone when it represents 12
+- In compounds, the "y" is dropped: sheyzee → shezee, sheytree → shetree
+- This is why contractions show "shex" not "sheyx", "shek" not "sheyk"
+
 ### Encoding Methods
 
 1. **Two-Part Array Encoding**: [tier, offset] where tier is 0-4 and offset is 0-11
-   - `[1, 0]` = she (tier 1, offset 0 = decimal 12)
+   - `[1, 0]` = shey (tier 1, offset 0 = decimal 12)
    - `[1, 3]` = shetree (tier 1, offset 3 = decimal 15)
    - `[2, 8]` = reek (tier 2, offset 8 = decimal 32)
    - `[4, 0]` = wu (tier 4, offset 0 = decimal 48)

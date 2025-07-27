@@ -20,7 +20,7 @@ mod grammar_tests {
     #[test]
     fn test_diacritic_names() {
         // Test diacritic names match our grammar
-        assert_eq!(Numeral::new(12).spoken_name(), "she");
+        assert_eq!(Numeral::new(12).spoken_name(), "shey");
         assert_eq!(Numeral::new(24).spoken_name(), "ree");
         assert_eq!(Numeral::new(36).spoken_name(), "jo");
         assert_eq!(Numeral::new(48).spoken_name(), "wu");
@@ -94,7 +94,7 @@ mod grammar_tests {
     fn test_spoken_names_0_to_60() {
         // Test critical transitions
         let expected = vec![
-            (0, "zo"), (11, "lev"), (12, "she"), (13, "shezee"),
+            (0, "zo"), (11, "lev"), (12, "shey"), (13, "shezee"),
             (18, "shex"), (20, "shek"), (24, "ree"), (30, "reex"),
             (32, "reek"), (36, "jo"), (42, "jox"), (44, "jok"),
             (48, "wu"), (54, "wux"), (56, "wuk"), (59, "wulev")
