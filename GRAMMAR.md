@@ -326,17 +326,20 @@ Both represent "nothing" or "zero" in their respective domains:
 
 ---
 
-### 🔹 Diacritics as Powers of 12
+### 🔹 Diacritics as Multiples of 12
 
-The five vowel-based diacritics reflect **powers of 12**:
+The five vowel-based diacritics are the **tier multipliers of 12**: each diacritic is
+tier × 12, with tier ∈ {0, 1, 2, 3, 4}. Combined with the 12 base glyphs (offset 0–11),
+this gives 12 × 5 = **60 distinct glyph–diacritic combinations**, addressing values 0–59
+(decimal = tier × 12 + offset).
 
-| Power of 12 | Decimal | Diacritic | Notes                     |
-|-------------|---------|-----------|---------------------------|
-| 12⁰         | 1       | `ta`      | (implied) base glyphs     |
-| 12¹         | 12      | `shey`    | `shezo` → spoken as `she` |
-| 12²         | 144     | `ree`     | `reezo` → spoken as `ree` |
-| 12³         | 1,728   | `jo`      | `jozo` → spoken as `jo`   |
-| 12⁴         | 20,736  | `wu`      | `wuzo` → spoken as `wu`   |
+| Multiple of 12 | Decimal | Diacritic | Notes                     |
+|----------------|---------|-----------|---------------------------|
+| 0 × 12         | 0       | `ta`      | (implied) base glyphs     |
+| 1 × 12         | 12      | `shey`    | `shezo` → spoken as `she` |
+| 2 × 12         | 24      | `ree`     | `reezo` → spoken as `ree` |
+| 3 × 12         | 36      | `jo`      | `jozo` → spoken as `jo`   |
+| 4 × 12         | 48      | `wu`      | `wuzo` → spoken as `wu`   |
 
 Thus, the **diacritic alone** may serve as a numeral in multiples of 12:
 
