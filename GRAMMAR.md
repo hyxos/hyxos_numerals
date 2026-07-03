@@ -231,17 +231,17 @@ For numerators greater than 1:
 
 ### Fraction Semantics (exact)
 
-A fraction's value is the **undivided pair** [numerator : denominator]
-on the projective line, reduced canonically (shehyxos = [12 : 6] =
-[2 : 1] = 2). Two consequences:
+A fraction's value is the **undivided pair** [numerator : denominator],
+reduced canonically (shehyxos = [12 : 6] = [2 : 1] = 2), and every
+fraction has one — valuation is total. Two special values:
 
-- **zotos = [1 : 0] is a legal value** — the point at infinity, the one
-  point that closes the number line into a circle. Dividing by zo
-  answers *zotos*, calmly.
-- **The only refused form is [0 : 0]** (e.g. *zozotos*). It is not
-  meaningless — it names the **center** of the plane, the point the
-  circle is drawn around and every value is a direction from. The
-  reference point of the value system is not itself a value.
+- **zotos = [1 : 0]** — the point at infinity, the one point that
+  closes the number line into a circle. Dividing by zo answers
+  *zotos*, calmly.
+- **zozotos = [0 : 0]** — the **center**: the point the circle is
+  drawn around, which every other value is a direction *from*. Not a
+  direction; still a value — the placeholder, zero in fraction form.
+  Dividing zo by zo answers *zozotos*.
 
 ### Etymology Note
 
