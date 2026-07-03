@@ -229,6 +229,20 @@ For numerators greater than 1:
 - **treekatos** = 3/4 = 0.75
 - **shehyxos** = 12/6 = 2
 
+### Fraction Semantics (exact)
+
+A fraction's value is the **undivided pair** [numerator : denominator]
+on the projective line, reduced canonically (shehyxos = [12 : 6] =
+[2 : 1] = 2). Two consequences:
+
+- **zotos = [1 : 0] is a legal value** — the point at infinity, the one
+  point that closes the number line into a circle. Dividing by zo
+  answers *zotos*, calmly.
+- **The only refused form is [0 : 0]** (e.g. *zozotos*). It is not
+  meaningless — it names the **center** of the plane, the point the
+  circle is drawn around and every value is a direction from. The
+  reference point of the value system is not itself a value.
+
 ### Etymology Note
 
 The name "Hyxos" for the numeral system itself comes from **hyxos** (1/6), reflecting the hexagonal/six-fold symmetry that appears throughout the system's design.
