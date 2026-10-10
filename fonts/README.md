@@ -38,3 +38,11 @@ A suit mark followed by a body composes into the numeral through the font's `ccm
 ```
 
 Put `Hyxos Sixty` first in the font stack, because system fonts swallow characters they do not map.
+
+## License
+
+The font files are licensed under the SIL Open Font License 1.1 (`OFL.txt` in this directory) with Reserved Font Name "Hyxos". The SPDX identifier is `OFL-1.1-RFN`.
+
+The woff2 is Hyxos Inc.'s own conversion of unchanged font data.
+
+Documents and products typeset with the font are not affected by the licence (OFL condition 5). Modified versions must not use "Hyxos" in their name without written permission.

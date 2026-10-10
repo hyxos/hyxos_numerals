@@ -164,4 +164,7 @@ This library implements the Hyxos grammar as documented. When making changes:
 
 ## License
 
-[License information here]
+| Path | Licence | File |
+|---|---|---|
+| `src/` and the crate code | MIT | `LICENSE` |
+| `fonts/` | SIL Open Font License 1.1 with Reserved Font Name "Hyxos" | `fonts/OFL.txt` |
