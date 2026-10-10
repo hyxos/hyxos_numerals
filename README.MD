@@ -14,6 +14,8 @@ The Hyxos system is designed as a pure numeral system that can be embedded withi
 - **Grammatical suffixes** for plurals, ordinals, fractions, etc.
 - **Self-referential naming** - "hyxos" means 1/6 in the system itself
 
+The Hyxos Sixty typeface lives under [`fonts/`](./fonts/), and [`fonts/README.md`](./fonts/README.md) has the codepoints.
+
 ## Quick Start
 
 ```rust
